@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, 'Times New Roman', Times, serif ;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #665eee;
+}
+.wrapper{
+    background: #fff;
+    border-radius: 15px;
+    max-width: 380px;
+    width: 100%;
+    padding: 25px;
+}
+
+.wrapper header{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.wrapper .poll-area{
+    margin: 20px 0 15px 0;
+}
+
+.poll-area label{
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    border: 2px solid #e6e6e6;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+label.selected{
+   border-color: #665eee;
+}
+
+label .row{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+label .row .column{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+label .row .circle{
+    height: 19px;
+    position: relative;
+    width: 19px;
+    border:2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    /* transition: all o.2s ease; */
+}
+label.selected .row .circle{
+    border-color: #665eee;
+}
+.row .circle::after{
+    content:"";
+    position: absolute;
+    height: 13px;
+    width: 11px;
+    background: #ccc;
+    top: 1.3px;
+    left: 1.9px;
+    border-radius: inherit;
+    justify-content: center;
+    display: none;
+}
+
+label.selected .row .circle::after{
+    display: block;
+    background: #665eee !important;
+}
+
+
+label:hover .row .circle::after{
+    display: block;
+    background: #e6e6e6;
+    cursor: pointer;
+}
+
+label .row span{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+label .row .percent{
+    display: none;
+}
+
+label .progress{
+    height: 7px;
+    width: 100%;
+    margin: 8px 0  3px 0;
+    background: #f0f0f0;
+    border-radius: 30px;
+    position: relative;
+    display: none ;
+}
+label .progress::after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: calc(1% * var(--w));
+    background: #ccc;
+    border-radius: inherit;
+}
+label.selected .progress::after{
+    background: #665eee;
+}
+label.selectall :is(.percent, .progress){
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
